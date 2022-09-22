@@ -1,7 +1,78 @@
+# Help a hematologist challenge
 
-<img src='imgs/horse2zebra.gif' align="right" width=384>
+## Training Cycle-GAN for domain adaptation
 
-<br><br><br>
+We used the Cycle-GAN model to train a generator for generating Mat_19/Ace_20 images from WBC1 images and vice versa.
+
+```
+python train_mean_std.py --name mat_ace_wbc_mean_std --model cycle_gan \
+--pool_size 50 --no_dropout --batch_size 16 --netG resnet_9blocks_noTanh
+```
+
+It expects the following in the root directory of the repo:
+
+- `metadata.csv` file
+- `Datasets/Acevedo_20`, `Datasets/Matek_19`, `Datasets/WBC1` datasets
+- `Datasets/Mean_image.pickle` and `Datasets/Std_image.pickle` which are the channel-wise mean and standard deviation of the Mat_19 and Ace_20 images
+
+It saves the log and model files under `checkpoints/mat_ace_wbc_mean_std` directory.
+
+It also saves example generated images, Mat_19/Ace_20 <----> WBC1 after each epoch under `figures_mean_std` 
+
+## Using trained Cycle-GAN to generate WBC1-like images for the Mat_19/Ace_20 images
+
+```
+python test_mean_std.py --name mat_ace_wbc_mean_std --model cycle_gan \
+--no_dropout --epoch 25 --results_dir Datasets/MAT_ACE_AS_WBC_MEAN_STD \
+--netG resnet_9blocks_noTanh
+```
+
+It uses the saved model at epoch 25 (you can change it to other epochs) to generate WBC1-like images
+for Mat_19/Ace_20 dataset and saves them at `Datasets/MAT_ACE_AS_WBC_MEAN_STD`
+
+The generated images (`Datasets/MAT_ACE_AS_WBC_MEAN_STD`) are then used to train a `resnet18` 
+classifier model. The trained model is used for making predictions on the dev phase (WBC1) and 
+test phase (WBC2) datasets, evaluated on the challenge website.
+
+
+## Data Preprocessing Details
+
+TO BE FILLED IN BY MARTIN AND ANKITA
+ 
+## Training and making inference using resnet18
+
+To train a classifier resnet18, run the following:
+
+```
+python train_resnet.py &> train.log
+```
+
+It will train the resnet18 model on the fake WBC dataset generated from Mat_19/Ace_20 dataset by the Cycle-GAN
+
+model files and results will be saved under `models/resnet_train` and `results/resnet_train` folder.
+
+The csv file to be submitted in the dev phase of the data challenge is at `results/resnet_train/submission.csv`
+
+Then, the trained model can be used to make prediction on WBC2 (test phase) datasets that is
+expected to be downloaded and saved at `Datasets/WBC2/DATA-TEST`
+
+```
+python test_resnet.py &> test.log
+```
+
+The results will be saved under `results/resnet_test/submission.csv` file which can be uploaded to test phase in the
+data challenge
+
+
+# Instructions using the code
+
+The code is copied from [here](https://github.com/junyanz/pytorch-CycleGAN-and-pix2pix) and adapted.
+
+For detailed instruction on how to set it up and use, please read the following that is copied from 
+the original source or just go to their repo linked above.
+
+Thanks to the original authors of Cycle-GAN.
+
 
 # CycleGAN and pix2pix in PyTorch
 
@@ -28,9 +99,6 @@ You may find useful information in [training/test tips](docs/tips.md) and [frequ
 <img src="https://phillipi.github.io/pix2pix/images/teaser_v3.png" width="800px"/>
 
 
-**[EdgesCats Demo](https://affinelayer.com/pixsrv/) | [pix2pix-tensorflow](https://github.com/affinelayer/pix2pix-tensorflow) | by [Christopher Hesse](https://twitter.com/christophrhesse)**
-
-<img src='imgs/edges2cats.jpg' width="400px"/>
 
 If you use this code for your research, please cite:
 
