@@ -34,6 +34,20 @@ The generated images (`Datasets/MAT_ACE_AS_WBC_MEAN_STD`) are then used to train
 classifier model. The trained model is used for making predictions on the dev phase (WBC1) and 
 test phase (WBC2) datasets, evaluated on the challenge website.
 
+![alt text](https://github.com/Bashirkazimi/Help-a-hematologist-out-Challenge/blob/main/examples/0.png)
+
+![alt text](https://github.com/Bashirkazimi/Help-a-hematologist-out-Challenge/blob/main/examples/10.png)
+
+![alt text](https://github.com/Bashirkazimi/Help-a-hematologist-out-Challenge/blob/main/examples/11.png)
+
+![alt text](https://github.com/Bashirkazimi/Help-a-hematologist-out-Challenge/blob/main/examples/12.png)
+
+![alt text](https://github.com/Bashirkazimi/Help-a-hematologist-out-Challenge/blob/main/examples/13.png)
+
+![alt text](https://github.com/Bashirkazimi/Help-a-hematologist-out-Challenge/blob/main/examples/1.png)
+
+![alt text](https://github.com/Bashirkazimi/Help-a-hematologist-out-Challenge/blob/main/examples/2.png)
+
 
 ## Data Preprocessing Details
 
