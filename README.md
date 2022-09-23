@@ -1,5 +1,7 @@
 # Help a hematologist challenge
 
+We placed third at the [Help a hematologist out challenge](https://helmholtz-data-challenges.de/web/challenges/challenge-page/93/overview). Here is the solution.
+
 ## Training Cycle-GAN for domain adaptation
 
 We used the Cycle-GAN model to train a generator for generating Mat_19/Ace_20 images from WBC1 images and vice versa.
