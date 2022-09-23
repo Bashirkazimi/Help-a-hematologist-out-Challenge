@@ -79,6 +79,11 @@ python test_resnet.py &> test.log
 The results will be saved under `results/resnet_test/submission.csv` file which can be uploaded to test phase in the
 data challenge
 
+## The Team
+
+BLAMAD: our team name is basically the first letter of the first names of all team members.
+
+Team Members: Bashir Kazimi, Lea Gabele, Ankita Negi, Martin Brenzke, Arnab Majumdar, and Dawit Hailu
 
 # Instructions using the code
 
@@ -87,6 +92,8 @@ The code is copied from [here](https://github.com/junyanz/pytorch-CycleGAN-and-p
 For detailed instruction on on its use, please go to their repo linked above.
 
 Thanks to the original authors of Cycle-GAN.
+
+
 
 ## Citation
 Citations for the original Cycle-GAN publications.
