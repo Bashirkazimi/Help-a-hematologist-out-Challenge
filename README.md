@@ -132,5 +132,5 @@ Citations for fancy_pca:
 
 Neural Networks
 ## Acknowledgments
-Code copied from [here](https://github.com/junyanz/pytorch-CycleGAN-and-pix2pix) and adapted.
-Code copied from [here](https://github.com/pixelatedbrian/fortnight-furniture/blob/master/src/fancy_pca.py) and adapted.
+CycleGAN code copied from [here](https://github.com/junyanz/pytorch-CycleGAN-and-pix2pix) and adapted.
+Fancy_PCA implemented from [here](https://github.com/pixelatedbrian/fortnight-furniture/blob/master/src/fancy_pca.py) and adapted.
