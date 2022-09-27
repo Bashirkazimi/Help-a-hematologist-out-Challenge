@@ -53,7 +53,11 @@ test phase (WBC2) datasets, evaluated on the challenge website.
 
 ## Data Preprocessing Details
 
-TO BE FILLED IN BY MARTIN AND ANKITA
+All the images are RGB. They were first center-cropped to  25 x 25 micrometers to keep the area of the background of the cell the same in all images.
+Then they were resized to 225 x 225 pixels.
+A mean and standard deviation image was calculated from the resized images for all the 3 channels.
+
+<img src="https://latex.codecogs.com/gif.latex?O_t=\text { Onset event at time bin } t " /> 
  
 ## Training and making inference using resnet18
 
