@@ -53,11 +53,14 @@ test phase (WBC2) datasets, evaluated on the challenge website.
 
 ## Data Preprocessing Details
 
-All the images are RGB. They were first center-cropped to  25 x 25 micrometers to keep the area of the background of the cell the same in all images.
-Then they were resized to 225 x 225 pixels.
-A mean and standard deviation image was calculated from the resized images for all the 3 channels.
+All the images are RGB. They were first center-cropped to  25 x 25 micrometers to keep the area of the background of the cell the same in all images. Then they were resized to 225 x 225 pixels.
+A mean and standard deviation image was calculated from the resized images from the training+validation dataset (ACE-20 and MAT-19) for all the 3 channels.
+All images were then channelwise standardised with respect to the respective mean and standard deviation images before training the GAN.
 
-<img src="https://latex.codecogs.com/gif.latex?O_t=\text { Onset event at time bin } t " /> 
+For training the classifier (Resnet18) , the images were geometrically augmented by Vertical and Horizontal Flipping. The RGB Intensity augmentation was done using Fancy_pca (https://github.com/pixelatedbrian/fortnight-furniture/blob/master/src/fancy_pca.py). The value for alpha_std used was 0.1 as proposed by the authors of the paper --> http://papers.nips.cc/paper/4824-imagenet-classification-with-deep-convolutional-neural-networks.pdf
+
+
+
  
 ## Training and making inference using resnet18
 
