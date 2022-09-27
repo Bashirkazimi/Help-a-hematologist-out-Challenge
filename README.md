@@ -103,7 +103,7 @@ Thanks to the original authors of Cycle-GAN.
 
 
 ## Citation
-Citations for the original Cycle-GAN publications.
+Citations for the original Cycle-GAN publications:
 ```
 @inproceedings{CycleGAN2017,
   title={Unpaired Image-to-Image Translation using Cycle-Consistent Adversarial Networks},
@@ -120,14 +120,15 @@ Citations for the original Cycle-GAN publications.
   year={2017}
 }
 ```
-Citations for fancy_pca,
+Citations for fancy_pca:
+```
 @inproceedings{NIPS2012_c399862d,
  title = {ImageNet Classification with Deep Convolutional Neural Networks},
  author = {Krizhevsky, Alex and Sutskever, Ilya and Hinton, Geoffrey E},
  booktitle = {Advances in Neural Information Processing Systems},
  year = {2012}
 }
-
+```
 ImageNet Classification with Deep Convolutional
 Neural Networks
 ## Acknowledgments
