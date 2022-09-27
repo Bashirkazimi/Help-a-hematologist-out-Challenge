@@ -120,6 +120,15 @@ Citations for the original Cycle-GAN publications.
   year={2017}
 }
 ```
+Citations for fancy_pca,
+@inproceedings{NIPS2012_c399862d,
+ title = {ImageNet Classification with Deep Convolutional Neural Networks},
+ author = {Krizhevsky, Alex and Sutskever, Ilya and Hinton, Geoffrey E},
+ booktitle = {Advances in Neural Information Processing Systems},
+ year = {2012}
+}
 
+ImageNet Classification with Deep Convolutional
+Neural Networks
 ## Acknowledgments
 Code copied from [here](https://github.com/junyanz/pytorch-CycleGAN-and-pix2pix) and adapted.
