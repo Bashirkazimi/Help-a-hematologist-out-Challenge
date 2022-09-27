@@ -57,7 +57,7 @@ All the images are RGB. They were first center-cropped to  25 x 25 micrometers t
 A mean and standard deviation image was calculated from the resized images from the training+validation dataset (ACE-20 and MAT-19) for all the 3 channels.
 All images were then channelwise standardised with respect to the respective mean and standard deviation images before training the GAN.
 
-For training the classifier (Resnet18) , the images were geometrically augmented by Vertical and Horizontal Flipping. The RGB Intensity augmentation was done using Fancy_pca (https://github.com/pixelatedbrian/fortnight-furniture/blob/master/src/fancy_pca.py). The value for alpha_std used was 0.1 as proposed by the authors of the paper --> http://papers.nips.cc/paper/4824-imagenet-classification-with-deep-convolutional-neural-networks.pdf
+For training the classifier (Resnet18) , the images were geometrically augmented by Vertical and Horizontal Flipping. The RGB Intensity augmentation was done using fancy_pca (https://github.com/pixelatedbrian/fortnight-furniture/blob/master/src/fancy_pca.py). The value for alpha_std used was 0.1 as proposed by the authors of the paper --> http://papers.nips.cc/paper/4824-imagenet-classification-with-deep-convolutional-neural-networks.pdf
 
 
 
@@ -133,4 +133,4 @@ Citations for fancy_pca:
 Neural Networks
 ## Acknowledgments
 CycleGAN code copied from [here](https://github.com/junyanz/pytorch-CycleGAN-and-pix2pix) and adapted.
-Fancy_PCA implemented from [here](https://github.com/pixelatedbrian/fortnight-furniture/blob/master/src/fancy_pca.py) and adapted.
+The fancy_pca implementation was taken from [here](https://github.com/pixelatedbrian/fortnight-furniture/blob/master/src/fancy_pca.py).
