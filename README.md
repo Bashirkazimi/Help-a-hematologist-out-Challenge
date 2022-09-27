@@ -53,7 +53,14 @@ test phase (WBC2) datasets, evaluated on the challenge website.
 
 ## Data Preprocessing Details
 
-TO BE FILLED IN BY MARTIN AND ANKITA
+All the images are RGB. They were first center-cropped to  25 x 25 micrometers to keep the area of the background of the cell the same in all images. Then they were resized to 224 x 224 pixels to fit the input sizes of the GAN and the Resnet18.
+A mean and standard deviation image was calculated from the resized images from the training+validation dataset (ACE-20 and MAT-19) for all the 3 channels.
+All images were then channelwise standardised with respect to the respective mean and standard deviation images before training the GAN.
+
+For training the classifier (Resnet18) , the images were geometrically augmented by Vertical and Horizontal Flipping. The RGB Intensity augmentation was done using fancy_pca (https://github.com/pixelatedbrian/fortnight-furniture/blob/master/src/fancy_pca.py). The value for alpha_std used was 0.1 as proposed by the authors of the paper --> http://papers.nips.cc/paper/4824-imagenet-classification-with-deep-convolutional-neural-networks.pdf
+
+
+
  
 ## Training and making inference using resnet18
 
@@ -96,7 +103,7 @@ Thanks to the original authors of Cycle-GAN.
 
 
 ## Citation
-Citations for the original Cycle-GAN publications.
+Citations for the original Cycle-GAN publications:
 ```
 @inproceedings{CycleGAN2017,
   title={Unpaired Image-to-Image Translation using Cycle-Consistent Adversarial Networks},
@@ -113,6 +120,17 @@ Citations for the original Cycle-GAN publications.
   year={2017}
 }
 ```
+Citations for fancy_pca:
+```
+@inproceedings{NIPS2012_c399862d,
+ title = {ImageNet Classification with Deep Convolutional Neural Networks},
+ author = {Krizhevsky, Alex and Sutskever, Ilya and Hinton, Geoffrey E},
+ booktitle = {Advances in Neural Information Processing Systems},
+ year = {2012}
+}
+```
 
+Neural Networks
 ## Acknowledgments
-Code copied from [here](https://github.com/junyanz/pytorch-CycleGAN-and-pix2pix) and adapted.
+CycleGAN code copied from [here](https://github.com/junyanz/pytorch-CycleGAN-and-pix2pix) and adapted.
+The fancy_pca implementation was taken from [here](https://github.com/pixelatedbrian/fortnight-furniture/blob/master/src/fancy_pca.py).
