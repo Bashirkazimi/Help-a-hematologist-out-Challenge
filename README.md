@@ -129,7 +129,8 @@ Citations for fancy_pca:
  year = {2012}
 }
 ```
-ImageNet Classification with Deep Convolutional
+
 Neural Networks
 ## Acknowledgments
 Code copied from [here](https://github.com/junyanz/pytorch-CycleGAN-and-pix2pix) and adapted.
+Code copied from [here](https://github.com/pixelatedbrian/fortnight-furniture/blob/master/src/fancy_pca.py) and adapted.
