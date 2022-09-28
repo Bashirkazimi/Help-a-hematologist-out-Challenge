@@ -130,7 +130,7 @@ Citations for fancy_pca:
 }
 ```
 
-Neural Networks
+
 ## Acknowledgments
 CycleGAN code copied from [here](https://github.com/junyanz/pytorch-CycleGAN-and-pix2pix) and adapted.
 The fancy_pca implementation was taken from [here](https://github.com/pixelatedbrian/fortnight-furniture/blob/master/src/fancy_pca.py).
